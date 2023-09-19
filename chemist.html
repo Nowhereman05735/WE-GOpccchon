@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WE GO! PCCCHON</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* Add this CSS to your <style> block or external CSS file */
+         /* Add this CSS for the active state of the li element */
+   
+        .navbar {
+            position: relative;
+        }
+
+        #navbar-toggle {
+            cursor: pointer;
+        }
+
+        #navbar-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #555;
+            border: 1px solid #555;
+            padding: 10px;
+        }
+
+        .navbar:hover #navbar-menu {
+            display: block;
+        }
+        /* Add some basic styling for the search bar */
+        .search-bar {
+            position: fixed;
+            top: 18px;
+            right: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-input {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>  
+    <div class="navbar">
+        <button id="navbar-toggle">☰</button>
+        <ul id="navbar-menu">
+            <li><a href="index.html">หน้าแรก</a> </li> <!-- Updated the href attribute -->
+            <li><a href="teachertable.html">ตำแหน่งโต๊ะครู</a></li>
+            <li><a href="tools.html">อุปกรณ์ของแต่ละห้อง</a></li>
+            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdKuW3JTLLwMnA5AP7w90nrqa1HcMt6nYpip__JhwjKE6o8sw/viewform?usp=sf_link">ฟอร์มจองห้อง</a></li>
+        </ul>
+    </div>
+    
+    <!-- Search bar at the top right corner -->
+    <div class="search-bar">
+        <form id="search-form" action="#" method="get">
+            <input type="text" id="search-input" name="q" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <div class="content">
+        <!-- Your website content goes here -->
+    </div>
+
+    <script>
+        // JavaScript code here
+    const navbarToggle = document.getElementById('navbar-toggle');
+    const navbarMenu = document.getElementById('navbar-menu');
+
+    navbarToggle.addEventListener('mousedown', () => {
+        navbarMenu.style.display = navbarMenu.style.display === 'none' ? 'block' : 'none';
+    })
+    document.getElementById("search-form").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+        const searchTerm = document.getElementById("search-input").value.toLowerCase();
+
+        if (searchTerm === "a") {
+            // Redirect to the desired page (a.html)
+            window.location.href = "chemist.html";
+        }
+    });
+
+    </script>
+</body>
+</html>

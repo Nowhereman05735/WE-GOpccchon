@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WE GO! PCCCHON</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* Add this CSS to your <style> block or external CSS file */
+         /* Add this CSS for the active state of the li element */
+
+        body {
+            background-image: url('Princess Chulabhorn Science High School (2).jpg');
+            background-size: cover; /* Cover the entire viewport */
+            background-repeat: no-repeat; /* Prevent image from repeating */
+            background-attachment: fixed; /* Fixed background */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            font-family: Arial, sans-serif; 
+        }
+        .centered-image {
+            text-align: center; /* Center horizontally */
+            margin-top: 50px; /* Adjust as needed for vertical centering */
+        }
+    
+        .centered-image img {
+            display: block; /* Remove any extra spacing */
+            margin: 0 auto; /* Center horizontally */
+        }
+
+        #navbar-toggle {
+            cursor: pointer;
+        }   
+
+        #navbar-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #2b0178;
+            border: 1px solid #2b0178;
+            padding: 10px;
+        }
+
+        .navbar:hover #navbar-menu {    
+            display: block;
+            
+        }
+        #navbar-menu li a:hover {
+            background-color: #b16a00;
+        }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #250363;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            z-index: 1000; /* Ensure it appears above other content */
+        }
+
+        /* Make the search bar fixed at the top right corner */
+        .search-bar {
+            margin-top: 16px;
+            position: fixed;
+            top: 0;
+            right: 10px;
+            display: flex;
+            align-items: center;
+            z-index: 1000; /* Ensure it appears above other content */
+        }
+
+        .search-input {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>  
+    <div class="navbar">
+        <button id="navbar-toggle">☰</button>
+        <ul id="navbar-menu">
+            <li><a href="index.html">หน้าแรก</a> </li> <!-- Updated the href attribute -->
+            <li><a href="school.html">แผนผังโรงเรียน</a></li>
+            <li><a href="teachertable.html">ตำแหน่งโต๊ะครู</a></li>
+            <li><a href="tools.html">อุปกรณ์ของแต่ละห้อง</a></li>
+            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdKuW3JTLLwMnA5AP7w90nrqa1HcMt6nYpip__JhwjKE6o8sw/viewform?usp=sf_link">ฟอร์มจองห้อง</a></li>
+        </ul>
+    </div>
+    
+    <!-- Search bar at the top right corner -->
+    <div class="search-bar">
+        <form id="search-form" action="#" method="get">
+            <input type="text" id="search-input" name="q" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    
+
+
+    <script>
+        // JavaScript code here
+    const navbarToggle = document.getElementById('navbar-toggle');
+    const navbarMenu = document.getElementById('navbar-menu');
+
+    navbarToggle.addEventListener('mousedown', () => {
+        navbarMenu.style.display = navbarMenu.style.display === 'none' ? 'block' : 'none';
+    })
+    document.getElementById("search-form").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+        const searchTerm = document.getElementById("search-input").value.toLowerCase();
+
+        if (searchTerm === "แผนผังโรงเรียน") {
+            // Redirect to the desired page (a.html)
+            window.location.href = "school.html";
+        }
+        if (searchTerm === "โต๊ะครู") {
+            // Redirect to the desired page (a.html)
+            window.location.href = "teachertable.html";
+        }
+        if (searchTerm === "อุปกรณ์") {
+            // Redirect to the desired page (a.html)
+            window.location.href = "tools.html";
+        }
+        if (searchTerm === "จองห้อง") {
+            // Redirect to the desired page (a.html)
+            window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSdKuW3JTLLwMnA5AP7w90nrqa1HcMt6nYpip__JhwjKE6o8sw/viewform?usp=sf_lin";
+        }
+    });
+
+    </script>
+</body>
+</html>
